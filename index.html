@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chanda's Collateral Based Loans – Fast Loans in Kitwe & Ndola</title>
+  <meta name="description" content="Chanda's Collateral Based Loans – Get a collateral-based loan in just a few minutes. Serving Kitwe and Ndola, Zambia." />
+  <meta name="keywords" content="collateral loans Zambia, loans Kitwe, loans Ndola, fast loans Zambia, phone collateral loan, laptop collateral loan" />
+  <meta name="robots" content="index, follow" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --black:   #050a04;
+      --dark:    #0a1209;
+      --dark2:   #0f1a0d;
+      --green:   #1a7a2e;
+      --green2:  #22a03c;
+      --lime:    #8bc34a;
+      --gold:    #f5c842;
+      --gold2:   #c9980a;
+      --white:   #f0f5ee;
+      --muted:   #5a7055;
+      --border:  rgba(139,195,74,.18);
+      --glow-g:  0 0 28px rgba(34,160,60,.4);
+      --glow-y:  0 0 28px rgba(245,200,66,.45);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── MONEY TEXTURE BACKGROUND ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0;
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 60px,
+          rgba(26,122,46,.03) 60px,
+          rgba(26,122,46,.03) 61px
+        ),
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 60px,
+          rgba(26,122,46,.03) 60px,
+          rgba(26,122,46,.03) 61px
+        );
+      pointer-events: none;
+    }
+
+    section, nav, footer { position: relative; z-index: 1; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6vw; height: 66px;
+      background: rgba(5,10,4,.93);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      display: flex; align-items: center; gap: .7rem;
+      text-decoration: none;
+    }
+    .nav-coin {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; box-shadow: var(--glow-y);
+      flex-shrink: 0;
+    }
+    .nav-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.25rem; letter-spacing: 2px;
+      color: var(--white); line-height: 1.1;
+    }
+    .nav-name span { color: var(--gold); }
+
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--muted);
+      font-size: .82rem; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--lime); }
+    .nav-apply {
+      background: var(--gold) !important; color: var(--black) !important;
+      padding: .4rem 1.2rem; border-radius: 3px;
+      transition: box-shadow .2s !important;
+    }
+    .nav-apply:hover { box-shadow: var(--glow-y) !important; color: var(--black) !important; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 110px 6vw 80px;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(26,122,46,.22) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(245,200,66,.08) 0%, transparent 55%);
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .72rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--lime); border: 1px solid rgba(139,195,74,.3);
+      padding: .38rem 1.1rem; border-radius: 2px; margin-bottom: 2rem;
+      animation: fadeUp .7s ease both;
+    }
+    .hero-eyebrow::before { content: '●'; font-size: .5rem; animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      letter-spacing: 3px; line-height: .95;
+      animation: fadeUp .7s .08s ease both;
+    }
+    .hero-title .g { color: var(--green2); }
+    .hero-title .y { color: var(--gold); }
+
+    .hero-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); margin: 1.2rem 0 2.8rem;
+      animation: fadeUp .7s .16s ease both;
+    }
+
+    .hero-btns {
+      display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+      animation: fadeUp .7s .24s ease both;
+    }
+    .btn-gold {
+      background: var(--gold); color: var(--black);
+      font-family: 'Barlow Condensed', sans-serif; font-size: 1rem;
+      font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      padding: .9rem 2.4rem; border: none; border-radius: 3px;
+      cursor: pointer; text-decoration: none;
+      transition: box-shadow .2s, transform .15s;
+    }
+    .btn-gold:hover { box-shadow: var(--glow-y); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif; font-size: 1rem;
+      font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      padding: .9rem 2.4rem; border: 1px solid rgba(255,255,255,.18);
+      border-radius: 3px; cursor: pointer; text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-outline:hover { border-color: var(--lime); color: var(--lime); }
+
+    /* hero stat strip */
+    .hero-stats {
+      display: flex; gap: 0; margin-top: 4rem; flex-wrap: wrap; justify-content: center;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+      animation: fadeUp .7s .35s ease both;
+    }
+    .hero-stat {
+      padding: 1.2rem 2.5rem; text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat .num {
+      font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem;
+      color: var(--gold); letter-spacing: 1px; line-height: 1;
+    }
+    .hero-stat .lbl { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: .2rem; }
+
+    /* ── RATES ── */
+    #rates { padding: 100px 6vw; background: var(--dark); }
+
+    .section-tag {
+      font-size: .7rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--lime); margin-bottom: .7rem;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      letter-spacing: 2px; margin-bottom: 1rem; line-height: 1;
+    }
+    .section-desc { color: var(--muted); font-size: .95rem; line-height: 1.7; max-width: 520px; margin-bottom: 3rem; }
+
+    .rates-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+    .rate-card {
+      background: var(--dark2); border: 1px solid var(--border);
+      border-radius: 6px; padding: 1.8rem 1.4rem; text-align: center;
+      position: relative; overflow: hidden;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .rate-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: linear-gradient(90deg, var(--green), var(--gold));
+      transform: scaleX(0); transition: transform .3s; transform-origin: left;
+    }
+    .rate-card:hover { transform: translateY(-5px); box-shadow: var(--glow-g); border-color: rgba(139,195,74,.35); }
+    .rate-card:hover::after { transform: scaleX(1); }
+    .rate-weeks { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--gold); letter-spacing: 2px; line-height: 1; }
+    .rate-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: .6rem; }
+    .rate-percent { font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 800; color: var(--lime); }
+    .rate-interest { font-size: .75rem; color: var(--muted); margin-top: .3rem; }
+
+    /* ── COLLATERAL ── */
+    #collateral { padding: 100px 6vw; background: var(--black); }
+
+    .collateral-inner { display: flex; gap: 5vw; flex-wrap: wrap; align-items: center; }
+    .collateral-text { flex: 1 1 320px; }
+    .collateral-grid {
+      flex: 1 1 320px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .collateral-card {
+      background: var(--dark2); border: 1px solid var(--border);
+      border-radius: 6px; padding: 1.6rem 1.2rem;
+      display: flex; align-items: center; gap: 1rem;
+      transition: border-color .2s, background .2s;
+    }
+    .collateral-card:hover { border-color: var(--gold2); background: rgba(245,200,66,.04); }
+    .collateral-icon { font-size: 2rem; flex-shrink: 0; }
+    .collateral-card h4 { font-weight: 700; font-size: .95rem; }
+    .collateral-card p { font-size: .78rem; color: var(--muted); margin-top: .2rem; }
+
+    /* ── HOW IT WORKS ── */
+    #how { padding: 100px 6vw; background: var(--dark); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .step {
+      position: relative; padding: 2rem 1.4rem;
+      background: var(--dark2); border: 1px solid var(--border); border-radius: 6px;
+    }
+    .step-num {
+      font-family: 'Bebas Neue', sans-serif; font-size: 4rem; line-height: 1;
+      color: rgba(139,195,74,.12); position: absolute; top: .8rem; right: 1rem;
+      user-select: none;
+    }
+    .step-icon { font-size: 1.8rem; margin-bottom: .8rem; }
+    .step h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: .5rem; }
+    .step p { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── CONTRACT / APPLY ── */
+    #apply { padding: 100px 6vw; background: var(--black); }
+
+    .apply-header { text-align: center; margin-bottom: 3rem; }
+    .apply-header .section-desc { margin: 0 auto; }
+
+    .contract-wrap {
+      max-width: 860px; margin: 0 auto;
+      background: var(--dark2); border: 1px solid var(--border); border-radius: 10px;
+      overflow: hidden;
+    }
+
+    /* Contract header band */
+    .contract-header {
+      background: linear-gradient(135deg, var(--green) 0%, #0f3d1a 100%);
+      padding: 2rem 2.5rem; border-bottom: 3px solid var(--gold);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    .contract-logo { display: flex; align-items: center; gap: .8rem; }
+    .contract-coin { width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold2)); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+    .contract-brand-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 2px; color: var(--white); }
+    .contract-brand-sub { font-size: .72rem; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: 2px; }
+    .contract-title-block { text-align: right; }
+    .contract-doc-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 2px; color: var(--gold); }
+    .contract-doc-sub { font-size: .72rem; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: 1px; }
+
+    .contract-body { padding: 2rem 2.5rem; }
+
+    /* Section dividers inside contract */
+    .form-section { margin-bottom: 2rem; }
+    .form-section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .8rem; font-weight: 800; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold);
+      border-bottom: 1px solid rgba(245,200,66,.2);
+      padding-bottom: .5rem; margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: .5rem;
+    }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+    .form-grid.full { grid-template-columns: 1fr; }
+
+    .form-group { display: flex; flex-direction: column; gap: .35rem; }
+    .form-group label {
+      font-size: .7rem; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--muted); font-weight: 600;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(139,195,74,.2);
+      border-radius: 4px; padding: .7rem .9rem; color: var(--white);
+      font-family: 'Barlow', sans-serif; font-size: .9rem; outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--lime);
+      box-shadow: 0 0 0 3px rgba(139,195,74,.1);
+    }
+    .form-group select option { background: var(--dark2); }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-group input[type="file"] {
+      padding: .5rem .9rem; cursor: pointer; color: var(--muted);
+    }
+
+    /* Loan amount display */
+    .loan-calc {
+      background: rgba(245,200,66,.06); border: 1px solid rgba(245,200,66,.2);
+      border-radius: 6px; padding: 1.2rem 1.4rem; margin-bottom: 1.5rem;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .8rem;
+    }
+    .loan-calc .lc-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .loan-calc .lc-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--gold); letter-spacing: 1px; }
+
+    /* Terms box */
+    .terms-box {
+      background: rgba(0,0,0,.3); border: 1px solid var(--border);
+      border-radius: 4px; padding: 1.2rem; margin-bottom: 1.5rem;
+      font-size: .8rem; color: var(--muted); line-height: 1.7; max-height: 160px;
+      overflow-y: auto;
+    }
+    .terms-box::-webkit-scrollbar { width: 4px; }
+    .terms-box::-webkit-scrollbar-thumb { background: var(--green); border-radius: 2px; }
+    .terms-box strong { color: var(--white); }
+
+    /* Checkbox */
+    .check-row {
+      display: flex; align-items: flex-start; gap: .75rem; margin-bottom: 1.2rem;
+      cursor: pointer;
+    }
+    .check-row input[type="checkbox"] {
+      width: 18px; height: 18px; accent-color: var(--lime);
+      flex-shrink: 0; margin-top: 2px; cursor: pointer;
+    }
+    .check-row span { font-size: .85rem; color: var(--muted); line-height: 1.5; }
+    .check-row span strong { color: var(--white); }
+
+    /* Signature area */
+    .sig-area {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;
+    }
+    .sig-box {
+      border-bottom: 1px solid rgba(139,195,74,.3);
+      padding-bottom: .5rem; text-align: center;
+    }
+    .sig-box .sig-line { height: 52px; }
+    .sig-box .sig-label { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: .4rem; }
+
+    .submit-contract {
+      width: 100%; background: linear-gradient(135deg, var(--green2), var(--green));
+      color: var(--white); font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem; letter-spacing: 3px; padding: 1.1rem;
+      border: none; border-radius: 4px; cursor: pointer;
+      transition: box-shadow .2s, transform .15s;
+    }
+    .submit-contract:hover { box-shadow: var(--glow-g); transform: translateY(-2px); }
+
+    .contract-footer-note {
+      text-align: center; font-size: .75rem; color: var(--muted);
+      margin-top: 1rem; line-height: 1.6;
+    }
+
+    /* Success state */
+    .contract-success {
+      display: none; text-align: center; padding: 3rem 2rem;
+    }
+    .contract-success .big-check { font-size: 4rem; margin-bottom: 1rem; }
+    .contract-success h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--lime); margin-bottom: .5rem; }
+    .contract-success p { color: var(--muted); font-size: .92rem; line-height: 1.7; max-width: 420px; margin: 0 auto 1.5rem; }
+
+    /* ── CONTACT ── */
+    #contact { padding: 100px 6vw; background: var(--dark); }
+    .contact-inner { display: flex; gap: 4vw; flex-wrap: wrap; align-items: flex-start; }
+    .contact-left { flex: 1 1 300px; }
+    .contact-cards { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+    .contact-card {
+      background: var(--dark2); border: 1px solid var(--border); border-radius: 6px;
+      padding: 1.2rem 1.4rem; display: flex; align-items: center; gap: 1rem;
+      text-decoration: none; color: var(--white); transition: border-color .2s, box-shadow .2s;
+    }
+    .contact-card:hover { border-color: var(--gold2); box-shadow: var(--glow-y); }
+    .contact-card .cc-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .contact-card .cc-lbl { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .contact-card .cc-val { font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--gold); letter-spacing: .5px; }
+    .contact-right {
+      flex: 1 1 300px; background: linear-gradient(135deg, rgba(26,122,46,.08), rgba(245,200,66,.06));
+      border: 1px solid var(--border); border-radius: 8px; padding: 2.5rem;
+    }
+    .contact-right h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; margin-bottom: .5rem; }
+    .contact-right h3 span { color: var(--gold); }
+    .contact-right p { color: var(--muted); font-size: .9rem; line-height: 1.7; margin-bottom: 1.2rem; }
+    .location-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(245,200,66,.1); border: 1px solid rgba(245,200,66,.25);
+      border-radius: 3px; padding: .5rem 1rem; font-size: .85rem; color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); border-top: 1px solid var(--border);
+      padding: 2rem 6vw; text-align: center;
+      font-size: .78rem; color: var(--muted);
+    }
+    footer span { color: var(--gold); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .form-grid, .form-grid.three { grid-template-columns: 1fr; }
+      .sig-area { grid-template-columns: 1fr; }
+      .hero-stat { padding: .9rem 1.4rem; }
+      .contract-header { flex-direction: column; }
+      .contract-title-block { text-align: left; }
+      .loan-calc { flex-direction: column; gap: .4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-brand">
+    <div class="nav-coin">💰</div>
+    <div>
+      <div class="nav-name">CHANDA'S <span>LOANS</span></div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#rates">Rates</a></li>
+    <li><a href="#collateral">Collateral</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#apply" class="nav-apply">Apply Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-eyebrow">Fast Loans · Kitwe &amp; Ndola · Zambia</div>
+  <h1 class="hero-title">
+    LOOKING FOR<br>
+    <span class="g">A </span><span class="y">LOAN?</span>
+  </h1>
+  <p class="hero-sub">Get a collateral-based loan in just a few minutes</p>
+  <div class="hero-btns">
+    <a href="#apply" class="btn-gold">Apply Now</a>
+    <a href="#rates" class="btn-outline">View Rates</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">4</div><div class="lbl">Loan Durations</div></div>
+    <div class="hero-stat"><div class="num">15%</div><div class="lbl">Starting Rate</div></div>
+    <div class="hero-stat"><div class="num">⚡</div><div class="lbl">Fast Approval</div></div>
+    <div class="hero-stat"><div class="num">2</div><div class="lbl">Locations</div></div>
+  </div>
+</section>
+
+<!-- RATES -->
+<section id="rates">
+  <div class="section-tag reveal">Loan Rates</div>
+  <h2 class="section-title reveal">Clear &amp; Simple<br>Interest Rates</h2>
+  <p class="section-desc reveal">No hidden fees. Choose the duration that works for you and know exactly what you owe.</p>
+  <div class="rates-grid">
+    <div class="rate-card reveal">
+      <div class="rate-label">Duration</div>
+      <div class="rate-weeks">1</div>
+      <div class="rate-label">Week</div>
+      <div class="rate-percent">15%</div>
+      <div class="rate-interest">Interest rate</div>
+    </div>
+    <div class="rate-card reveal">
+      <div class="rate-label">Duration</div>
+      <div class="rate-weeks">2</div>
+      <div class="rate-label">Weeks</div>
+      <div class="rate-percent">25%</div>
+      <div class="rate-interest">Interest rate</div>
+    </div>
+    <div class="rate-card reveal">
+      <div class="rate-label">Duration</div>
+      <div class="rate-weeks">3</div>
+      <div class="rate-label">Weeks</div>
+      <div class="rate-percent">35%</div>
+      <div class="rate-interest">Interest rate</div>
+    </div>
+    <div class="rate-card reveal">
+      <div class="rate-label">Duration</div>
+      <div class="rate-weeks">4</div>
+      <div class="rate-label">Weeks</div>
+      <div class="rate-percent">45%</div>
+      <div class="rate-interest">Interest rate</div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLATERAL -->
+<section id="collateral">
+  <div class="collateral-inner">
+    <div class="collateral-text">
+      <div class="section-tag reveal">What We Accept</div>
+      <h2 class="section-title reveal">Acceptable<br>Collateral</h2>
+      <p class="section-desc reveal">Bring any of these items as security for your loan. Items are kept safely and returned once your loan is fully repaid.</p>
+    </div>
+    <div class="collateral-grid">
+      <div class="collateral-card reveal">
+        <span class="collateral-icon">📱</span>
+        <div><h4>Phones</h4><p>Smartphones &amp; feature phones</p></div>
+      </div>
+      <div class="collateral-card reveal">
+        <span class="collateral-icon">📺</span>
+        <div><h4>Television</h4><p>Any size or brand</p></div>
+      </div>
+      <div class="collateral-card reveal">
+        <span class="collateral-icon">💻</span>
+        <div><h4>Laptops</h4><p>All brands accepted</p></div>
+      </div>
+      <div class="collateral-card reveal">
+        <span class="collateral-icon">🧊</span>
+        <div><h4>Fridges &amp; More</h4><p>Electronics &amp; appliances</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-tag reveal">The Process</div>
+  <h2 class="section-title reveal">How It Works</h2>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <div class="step-icon">📋</div>
+      <h3>Fill the Form</h3>
+      <p>Complete the loan application form below with your personal details and collateral information.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">02</div>
+      <div class="step-icon">🤝</div>
+      <h3>Bring Collateral</h3>
+      <p>Visit us in Kitwe or Ndola with your collateral item and valid ID for verification.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">03</div>
+      <div class="step-icon">✅</div>
+      <h3>Get Approved</h3>
+      <p>Your collateral is assessed and the loan amount is agreed. Quick, simple, no long queues.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">04</div>
+      <div class="step-icon">💵</div>
+      <h3>Receive Cash</h3>
+      <p>Cash is paid out on the spot. Repay within your agreed duration and collect your item.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY / CONTRACT -->
+<section id="apply">
+  <div class="apply-header">
+    <div class="section-tag reveal">Loan Application</div>
+    <h2 class="section-title reveal">Loan Contract Form</h2>
+    <p class="section-desc reveal">Fill in all sections accurately. This information forms part of your official loan agreement with Chanda's Collateral Based Loans.</p>
+  </div>
+
+  <div class="contract-wrap reveal">
+    <!-- Contract header -->
+    <div class="contract-header">
+      <div class="contract-logo">
+        <div class="contract-coin">💰</div>
+        <div>
+          <div class="contract-brand-name">CHANDA'S COLLATERAL BASED LOANS</div>
+          <div class="contract-brand-sub">Kitwe &amp; Ndola, Zambia</div>
+        </div>
+      </div>
+      <div class="contract-title-block">
+        <div class="contract-doc-title">LOAN APPLICATION CONTRACT</div>
+        <div class="contract-doc-sub">Ref: <span id="contractRef">—</span> &nbsp;|&nbsp; Date: <span id="contractDate">—</span></div>
+      </div>
+    </div>
+
+    <!-- Contract body -->
+    <div class="contract-body" id="contractBody">
+
+      <!-- Section 1: Borrower -->
+      <div class="form-section">
+        <div class="form-section-title">👤 Section 1 — Borrower Information</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="fullName" placeholder="e.g. Mulenga Chanda" />
+          </div>
+          <div class="form-group">
+            <label>National ID / NRC Number *</label>
+            <input type="text" id="nrcNumber" placeholder="e.g. 123456/78/1" />
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="phone" placeholder="e.g. 0977 123 456" />
+          </div>
+          <div class="form-group">
+            <label>Alternate Phone</label>
+            <input type="tel" id="phone2" placeholder="e.g. 0955 654 321" />
+          </div>
+        </div>
+        <div class="form-grid" style="margin-top:1rem">
+          <div class="form-group">
+            <label>Physical Address *</label>
+            <input type="text" id="address" placeholder="e.g. Stand 12, Buchi, Kitwe" />
+          </div>
+          <div class="form-group">
+            <label>City / Town *</label>
+            <select id="city">
+              <option value="">Select city…</option>
+              <option>Kitwe</option>
+              <option>Ndola</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Next of Kin -->
+      <div class="form-section">
+        <div class="form-section-title">👨‍👩‍👧 Section 2 — Next of Kin</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Next of Kin Full Name *</label>
+            <input type="text" id="kinName" placeholder="e.g. Chanda Mwale" />
+          </div>
+          <div class="form-group">
+            <label>Relationship *</label>
+            <select id="kinRelation">
+              <option value="">Select relationship…</option>
+              <option>Spouse</option>
+              <option>Parent</option>
+              <option>Sibling</option>
+              <option>Child</option>
+              <option>Other relative</option>
+              <option>Friend</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Next of Kin Phone *</label>
+            <input type="tel" id="kinPhone" placeholder="e.g. 0966 789 012" />
+          </div>
+          <div class="form-group">
+            <label>Next of Kin Address</label>
+            <input type="text" id="kinAddress" placeholder="e.g. Plot 5, Wusakile, Kitwe" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Collateral -->
+      <div class="form-section">
+        <div class="form-section-title">📦 Section 3 — Collateral Details</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Collateral Item Type *</label>
+            <select id="collateralType">
+              <option value="">Select item…</option>
+              <option>Phone / Smartphone</option>
+              <option>Laptop</option>
+              <option>Television</option>
+              <option>Fridge</option>
+              <option>Other Electronics</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Brand / Model *</label>
+            <input type="text" id="collateralBrand" placeholder="e.g. Samsung Galaxy A54" />
+          </div>
+          <div class="form-group">
+            <label>Serial / IMEI Number</label>
+            <input type="text" id="serialNum" placeholder="e.g. 357123456789012" />
+          </div>
+          <div class="form-group">
+            <label>Condition *</label>
+            <select id="condition">
+              <option value="">Select condition…</option>
+              <option>Excellent – like new</option>
+              <option>Good – minor scratches</option>
+              <option>Fair – visible wear</option>
+              <option>Poor – damaged but working</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-grid full" style="margin-top:1rem">
+          <div class="form-group">
+            <label>Collateral Description (colour, features, any faults)</label>
+            <textarea id="collateralDesc" placeholder="Describe the item in detail — colour, notable features, any scratches or faults…"></textarea>
+          </div>
+        </div>
+        <div class="form-grid full" style="margin-top:1rem">
+          <div class="form-group">
+            <label>Photo of Collateral Item (optional)</label>
+            <input type="file" id="collateralPhoto" accept="image/*" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Loan Details -->
+      <div class="form-section">
+        <div class="form-section-title">💵 Section 4 — Loan Details</div>
+        <div class="form-grid three">
+          <div class="form-group">
+            <label>Loan Amount (ZMW) *</label>
+            <input type="number" id="loanAmount" placeholder="e.g. 500" min="50" oninput="calcLoan()" />
+          </div>
+          <div class="form-group">
+            <label>Loan Duration *</label>
+            <select id="loanDuration" onchange="calcLoan()">
+              <option value="">Select duration…</option>
+              <option value="1">1 Week — 15% interest</option>
+              <option value="2">2 Weeks — 25% interest</option>
+              <option value="3">3 Weeks — 35% interest</option>
+              <option value="4">4 Weeks — 45% interest</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Preferred Branch</label>
+            <select id="branch">
+              <option value="">Select branch…</option>
+              <option>Kitwe</option>
+              <option>Ndola</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Live loan calculator -->
+        <div class="loan-calc" id="loanCalc" style="display:none">
+          <div>
+            <div class="lc-label">Loan Principal</div>
+            <div class="lc-val" id="lcPrincipal">—</div>
+          </div>
+          <div>
+            <div class="lc-label">Interest</div>
+            <div class="lc-val" id="lcInterest">—</div>
+          </div>
+          <div>
+            <div class="lc-label">Total Repayment</div>
+            <div class="lc-val" id="lcTotal" style="color:var(--lime)">—</div>
+          </div>
+          <div>
+            <div class="lc-label">Due Date (approx.)</div>
+            <div class="lc-val" id="lcDue" style="font-size:1.2rem">—</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 5: Terms -->
+      <div class="form-section">
+        <div class="form-section-title">📜 Section 5 — Terms &amp; Conditions</div>
+        <div class="terms-box">
+          <strong>LOAN AGREEMENT — TERMS AND CONDITIONS</strong><br><br>
+          1. <strong>Collateral:</strong> The borrower agrees to surrender the stated collateral item to Chanda's Collateral Based Loans ("the Lender") as security for the loan. The item will be held safely until the loan is fully repaid.<br><br>
+          2. <strong>Interest Rates:</strong> Interest is charged as stated at the time of application — 15% (1 week), 25% (2 weeks), 35% (3 weeks), or 45% (4 weeks) of the principal amount.<br><br>
+          3. <strong>Repayment:</strong> The borrower agrees to repay the full loan amount plus interest by the agreed due date. Failure to repay on time may result in forfeiture of the collateral item.<br><br>
+          4. <strong>Late Repayment:</strong> If the borrower does not repay within the agreed period, the Lender reserves the right to sell or dispose of the collateral item to recover the outstanding amount.<br><br>
+          5. <strong>Collateral Condition:</strong> The Lender will take reasonable care of the collateral item. The borrower acknowledges the item's condition at the time of deposit as described in this form.<br><br>
+          6. <strong>Right of Redemption:</strong> The borrower may redeem their collateral at any time before disposal by repaying the full outstanding amount plus applicable interest.<br><br>
+          7. <strong>Identity Verification:</strong> The borrower consents to identity verification using their NRC number and agrees that the information provided is true and accurate.<br><br>
+          8. <strong>Default:</strong> The Lender reserves the right to pursue legal action to recover any outstanding amounts not covered by the collateral.<br><br>
+          9. <strong>Governing Law:</strong> This agreement is governed by the laws of the Republic of Zambia.<br><br>
+          10. By submitting this form, the borrower confirms they have read, understood, and agree to all terms stated above.
+        </div>
+        <label class="check-row">
+          <input type="checkbox" id="agreeTerms" />
+          <span>I have read and agree to the <strong>Terms and Conditions</strong> above. I confirm that all information provided is accurate and true.</span>
+        </label>
+        <label class="check-row">
+          <input type="checkbox" id="agreeCollateral" />
+          <span>I agree that my collateral item will be held by Chanda's Collateral Based Loans until full repayment is made.</span>
+        </label>
+      </div>
+
+      <!-- Signature -->
+      <div class="form-section">
+        <div class="form-section-title">✍️ Section 6 — Declaration</div>
+        <div class="sig-area">
+          <div class="sig-box">
+            <div class="sig-line"></div>
+            <div class="sig-label">Borrower's Signature</div>
+          </div>
+          <div class="sig-box">
+            <div class="sig-line"></div>
+            <div class="sig-label">Lender's Signature (Office Use)</div>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Borrower's Full Name (print) *</label>
+            <input type="text" id="sigName" placeholder="Print your full name to confirm" />
+          </div>
+          <div class="form-group">
+            <label>Date of Application</label>
+            <input type="text" id="sigDate" readonly />
+          </div>
+        </div>
+      </div>
+
+      <button class="submit-contract" onclick="submitContract()">
+        ✅ &nbsp; SUBMIT LOAN APPLICATION
+      </button>
+      <p class="contract-footer-note">
+        By submitting you agree to be contacted by Chanda's Collateral Based Loans regarding your application.<br>
+        📞 +260 974 258 106 &nbsp;|&nbsp; +260 762 211 323 &nbsp;|&nbsp; 📍 Kitwe &amp; Ndola
+      </p>
+    </div>
+
+    <!-- Success state -->
+    <div class="contract-success" id="contractSuccess">
+      <div class="big-check">✅</div>
+      <h3>APPLICATION SUBMITTED!</h3>
+      <p>Thank you, <strong id="successName">—</strong>. Your loan application (Ref: <strong id="successRef">—</strong>) has been received. We will contact you on your provided number to confirm your appointment.</p>
+      <a href="#contact" class="btn-gold">📞 Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div class="section-tag reveal">Get In Touch</div>
+      <h2 class="section-title reveal">Contact Us</h2>
+      <p class="section-desc reveal">Have questions before applying? Reach us on WhatsApp or call — we're happy to help.</p>
+      <div class="contact-cards">
+        <a href="https://wa.me/260974258106?text=Hi%20Chanda's%20Loans%2C%20I'd%20like%20to%20enquire%20about%20a%20loan." class="contact-card reveal" target="_blank">
+          <span class="cc-icon">💬</span>
+          <div><div class="cc-lbl">WhatsApp / Call</div><div class="cc-val">+260 974 258 106</div></div>
+        </a>
+        <a href="https://wa.me/260762211323?text=Hi%20Chanda's%20Loans%2C%20I'd%20like%20to%20enquire%20about%20a%20loan." class="contact-card reveal" target="_blank">
+          <span class="cc-icon">💬</span>
+          <div><div class="cc-lbl">WhatsApp / Call</div><div class="cc-val">+260 762 211 323</div></div>
+        </a>
+        <a href="mailto:chandaloans@gmail.com" class="contact-card reveal">
+          <span class="cc-icon">✉️</span>
+          <div><div class="cc-lbl">Email (example)</div><div class="cc-val">chandaloans@gmail.com</div></div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-right reveal">
+      <h3>Visit Us <span>Today</span></h3>
+      <p>Walk in with your collateral and valid ID. No appointments necessary — we process loans fast on the same visit.</p>
+      <div style="display:flex;flex-direction:column;gap:.6rem">
+        <div class="location-badge">📍 Kitwe, Zambia</div>
+        <div class="location-badge">📍 Ndola, Zambia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 <span>Chanda's Collateral Based Loans</span>. Fast Loans · Kitwe &amp; Ndola · Zambia.</p>
+</footer>
+
+<script>
+  // ── Scroll reveal
+  const revEls = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e,i) => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i*70); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  revEls.forEach(el => obs.observe(el));
+
+  // ── Set contract date & ref on load
+  function genRef() {
+    return 'CCL-' + Date.now().toString(36).toUpperCase().slice(-6);
+  }
+  const today = new Date();
+  const dateStr = today.toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'numeric' });
+  document.getElementById('contractRef').textContent = genRef();
+  document.getElementById('contractDate').textContent = dateStr;
+  const sigDateEl = document.getElementById('sigDate');
+  if (sigDateEl) sigDateEl.value = dateStr;
+
+  // ── Loan calculator
+  const rates = { '1':15, '2':25, '3':35, '4':45 };
+  function calcLoan() {
+    const amt = parseFloat(document.getElementById('loanAmount').value);
+    const dur = document.getElementById('loanDuration').value;
+    const calc = document.getElementById('loanCalc');
+    if (!amt || !dur || amt <= 0) { calc.style.display = 'none'; return; }
+    const rate = rates[dur];
+    const interest = amt * rate / 100;
+    const total = amt + interest;
+    const dueDate = new Date();
+    dueDate.setDate(dueDate.getDate() + parseInt(dur) * 7);
+    document.getElementById('lcPrincipal').textContent = 'ZMW ' + amt.toFixed(2);
+    document.getElementById('lcInterest').textContent = 'ZMW ' + interest.toFixed(2);
+    document.getElementById('lcTotal').textContent = 'ZMW ' + total.toFixed(2);
+    document.getElementById('lcDue').textContent = dueDate.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
+    calc.style.display = 'flex';
+  }
+
+  // ── Submit contract
+  function submitContract() {
+    const required = [
+      { id:'fullName', label:'Full Name' },
+      { id:'nrcNumber', label:'NRC Number' },
+      { id:'phone', label:'Phone Number' },
+      { id:'address', label:'Address' },
+      { id:'city', label:'City' },
+      { id:'kinName', label:'Next of Kin Name' },
+      { id:'kinRelation', label:'Next of Kin Relationship' },
+      { id:'kinPhone', label:'Next of Kin Phone' },
+      { id:'collateralType', label:'Collateral Type' },
+      { id:'collateralBrand', label:'Collateral Brand/Model' },
+      { id:'condition', label:'Collateral Condition' },
+      { id:'loanAmount', label:'Loan Amount' },
+      { id:'loanDuration', label:'Loan Duration' },
+      { id:'sigName', label:'Printed Name (Declaration)' },
+    ];
+    for (const f of required) {
+      const el = document.getElementById(f.id);
+      if (!el.value.trim()) {
+        el.focus();
+        el.style.borderColor = '#e53935';
+        setTimeout(() => el.style.borderColor = '', 2000);
+        alert(`Please fill in: ${f.label}`);
+        return;
+      }
+    }
+    if (!document.getElementById('agreeTerms').checked) {
+      alert('Please agree to the Terms & Conditions to continue.'); return;
+    }
+    if (!document.getElementById('agreeCollateral').checked) {
+      alert('Please agree to the collateral holding terms to continue.'); return;
+    }
+
+    const name = document.getElementById('fullName').value.trim();
+    const ref = document.getElementById('contractRef').textContent;
+
+    document.getElementById('contractBody').style.display = 'none';
+    const succ = document.getElementById('contractSuccess');
+    succ.style.display = 'block';
+    document.getElementById('successName').textContent = name;
+    document.getElementById('successRef').textContent = ref;
+    succ.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+</script>
+</body>
+</html>
