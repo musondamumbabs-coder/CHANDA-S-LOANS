@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chanda Loans — Fast Cash Against Your Valuables</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:      #1E3A5F;
+    --navy-deep: #0F2240;
+    --navy-mid:  #2A4F7C;
+    --gold:      #D4AF37;
+    --gold-lt:   #E8CB6A;
+    --gold-dk:   #B8941E;
+    --bg:        #F8F6F2;
+    --bg-warm:   #F2EDE5;
+    --white:     #FFFFFF;
+    --text:      #1A1A2E;
+    --text-mid:  #4A5568;
+    --text-lt:   #718096;
+    --border:    rgba(30,58,95,0.1);
+    --shadow-sm: 0 2px 8px rgba(30,58,95,0.08);
+    --shadow-md: 0 8px 32px rgba(30,58,95,0.12);
+    --shadow-lg: 0 20px 60px rgba(30,58,95,0.16);
+    --radius:    16px;
+    --font-head: 'Playfair Display', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(248,246,242,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    height: 68px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 36px; height: 36px;
+    background: var(--navy);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nav-logo-icon svg { width: 20px; height: 20px; }
+  .nav-logo-text {
+    font-family: var(--font-head);
+    font-size: 1.25rem; font-weight: 600;
+    color: var(--navy);
+  }
+  .nav-logo-text span { color: var(--gold); }
+
+  .nav-links {
+    display: flex; align-items: center; gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.9rem; font-weight: 500;
+    color: var(--text-mid);
+    transition: color 200ms;
+  }
+  .nav-links a:hover { color: var(--navy); }
+
+  .nav-cta {
+    background: var(--navy);
+    color: var(--white) !important;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-weight: 600 !important;
+    transition: background 200ms, transform 150ms !important;
+  }
+  .nav-cta:hover { background: var(--navy-mid) !important; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 140px 5% 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    max-width: 1200px; margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(212,175,55,0.12);
+    border: 1px solid rgba(212,175,55,0.3);
+    color: var(--gold-dk);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  .hero-title {
+    font-family: var(--font-head);
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--navy-deep);
+    margin-bottom: 20px;
+  }
+  .hero-title em {
+    font-style: normal;
+    color: var(--gold);
+    position: relative;
+  }
+  .hero-title em::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 2px; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    border-radius: 2px;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-mid);
+    margin-bottom: 36px;
+    max-width: 440px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex; align-items: center; gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--navy);
+    color: var(--white);
+    padding: 15px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 4px 20px rgba(30,58,95,0.3);
+    transition: background 200ms, transform 150ms, box-shadow 200ms;
+    cursor: pointer; border: none;
+  }
+  .btn-primary:hover {
+    background: var(--navy-mid);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(30,58,95,0.4);
+  }
+  .btn-primary svg { width: 18px; height: 18px; }
+
+  .btn-secondary {
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: gap 200ms;
+  }
+  .btn-secondary:hover { gap: 10px; }
+
+  .hero-stats {
+    display: flex; gap: 32px;
+    margin-top: 44px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: var(--font-head);
+    font-size: 1.75rem; font-weight: 700;
+    color: var(--navy);
+  }
+  .stat-num span { color: var(--gold); }
+  .stat-label { font-size: 0.82rem; color: var(--text-lt); margin-top: 2px; }
+
+  /* Hero visual */
+  .hero-visual {
+    position: relative;
+  }
+
+  .hero-card-main {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 36px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card-main::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--navy), var(--gold));
+  }
+
+  .card-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 28px;
+  }
+  .card-label {
+    font-size: 0.78rem; font-weight: 600;
+    color: var(--text-lt);
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .card-badge {
+    background: rgba(16,185,129,0.1);
+    color: #059669;
+    font-size: 0.75rem; font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 50px;
+  }
+
+  .loan-amount {
+    font-family: var(--font-head);
+    font-size: 3rem; font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .loan-currency { font-size: 1.5rem; vertical-align: super; }
+  .loan-sub { font-size: 0.85rem; color: var(--text-lt); margin-bottom: 28px; }
+
+  .loan-details {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin-bottom: 28px;
+  }
+  .detail-item {
+    background: var(--bg);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .detail-label { font-size: 0.75rem; color: var(--text-lt); margin-bottom: 4px; }
+  .detail-value { font-size: 1rem; font-weight: 700; color: var(--navy); }
+
+  .loan-progress { margin-bottom: 24px; }
+  .progress-header {
+    display: flex; justify-content: space-between;
+    font-size: 0.8rem; color: var(--text-lt);
+    margin-bottom: 8px;
+  }
+  .progress-bar {
+    height: 8px;
+    background: var(--bg-warm);
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 68%;
+    background: linear-gradient(90deg, var(--navy), var(--gold));
+    border-radius: 50px;
+    animation: fill 1.5s ease-out forwards;
+  }
+  @keyframes fill {
+    from { width: 0 }
+    to { width: 68% }
+  }
+
+  .collateral-items {
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .collateral-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 6px 12px;
+    font-size: 0.78rem; font-weight: 500;
+    color: var(--text-mid);
+  }
+  .collateral-chip svg { width: 14px; height: 14px; color: var(--gold-dk); }
+
+  /* Floating badge */
+  .float-badge {
+    position: absolute;
+    background: var(--white);
+    border-radius: 14px;
+    padding: 14px 18px;
+    box-shadow: var(--shadow-md);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .float-badge-top {
+    top: -20px; right: -16px;
+  }
+  .float-badge-bottom {
+    bottom: -20px; left: -16px;
+  }
+  .float-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .float-icon.gold { background: rgba(212,175,55,0.15); }
+  .float-icon.green { background: rgba(16,185,129,0.12); }
+  .float-icon svg { width: 20px; height: 20px; }
+  .float-text { font-size: 0.8rem; }
+  .float-text strong { display: block; font-weight: 700; color: var(--navy); font-size: 0.9rem; }
+  .float-text span { color: var(--text-lt); font-size: 0.75rem; }
+
+  /* ── HOW IT WORKS ── */
+  .section {
+    padding: 96px 5%;
+    max-width: 1200px; margin: 0 auto;
+  }
+
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.78rem; font-weight: 700;
+    color: var(--gold-dk);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+  .section-tag::before {
+    content: '';
+    width: 20px; height: 2px;
+    background: var(--gold);
+    border-radius: 1px;
+  }
+
+  .section-title {
+    font-family: var(--font-head);
+    font-size: clamp(1.9rem, 3vw, 2.8rem);
+    font-weight: 700;
+    color: var(--navy-deep);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+    position: relative;
+  }
+  .steps-grid::after {
+    content: '';
+    position: absolute;
+    top: 36px; left: calc(12.5% + 24px); right: calc(12.5% + 24px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--gold) 50%, var(--navy) 100%);
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .step-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    transition: transform 250ms, box-shadow 250ms;
+    position: relative;
+  }
+  .step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .step-num {
+    width: 48px; height: 48px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-head);
+    font-size: 1.1rem; font-weight: 700;
+    margin: 0 auto 20px;
+    position: relative; z-index: 1;
+  }
+  .step-num.gold-num { background: var(--gold); color: var(--navy); }
+
+  .step-title {
+    font-weight: 700; font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .step-desc { font-size: 0.87rem; color: var(--text-lt); line-height: 1.6; }
+
+  /* ── COLLATERAL ── */
+  .collateral-section {
+    background: var(--navy-deep);
+    padding: 96px 5%;
+    color: var(--white);
+  }
+  .collateral-inner {
+    max-width: 1200px; margin: 0 auto;
+  }
+  .collateral-header { margin-bottom: 56px; }
+  .collateral-section .section-tag { color: var(--gold-lt); }
+  .collateral-section .section-tag::before { background: var(--gold); }
+  .collateral-section .section-title { color: var(--white); }
+  .collateral-section .section-sub { color: rgba(255,255,255,0.65); }
+
+  .collateral-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .collateral-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: background 250ms, border-color 250ms, transform 250ms;
+    cursor: default;
+  }
+  .collateral-card:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(212,175,55,0.4);
+    transform: translateY(-3px);
+  }
+
+  .collateral-icon {
+    width: 52px; height: 52px;
+    background: rgba(212,175,55,0.15);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px;
+    color: var(--gold);
+  }
+  .collateral-icon svg { width: 26px; height: 26px; }
+
+  .collateral-name {
+    font-weight: 700; font-size: 1.05rem;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .collateral-desc {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+  .collateral-range {
+    margin-top: 14px;
+    display: inline-block;
+    background: rgba(212,175,55,0.12);
+    color: var(--gold-lt);
+    font-size: 0.78rem; font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 50px;
+  }
+
+  /* ── WHY CHANDA ── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .why-list { margin-top: 36px; }
+  .why-item {
+    display: flex; gap: 16px;
+    margin-bottom: 28px;
+  }
+  .why-icon {
+    width: 48px; height: 48px;
+    background: rgba(30,58,95,0.08);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--navy);
+    transition: background 200ms;
+  }
+  .why-item:hover .why-icon { background: var(--navy); color: var(--white); }
+  .why-icon svg { width: 22px; height: 22px; }
+  .why-text {}
+  .why-title { font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .why-desc { font-size: 0.88rem; color: var(--text-lt); line-height: 1.6; }
+
+  .why-visual {
+    position: relative;
+  }
+  .why-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: var(--shadow-md);
+  }
+  .rates-list { margin-top: 16px; }
+  .rate-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--bg-warm);
+  }
+  .rate-row:last-child { border-bottom: none; }
+  .rate-label { font-size: 0.9rem; color: var(--text-mid); font-weight: 500; }
+  .rate-val {
+    font-weight: 700; color: var(--navy);
+    font-size: 0.95rem;
+  }
+  .rate-badge {
+    background: rgba(212,175,55,0.12);
+    color: var(--gold-dk);
+    font-size: 0.72rem; font-weight: 700;
+    padding: 2px 8px; border-radius: 50px;
+    margin-left: 8px;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-bg {
+    background: var(--bg-warm);
+    padding: 96px 5%;
+  }
+  .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .testimonial-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+  }
+
+  .stars {
+    display: flex; gap: 3px;
+    margin-bottom: 16px;
+    color: var(--gold);
+  }
+  .stars svg { width: 16px; height: 16px; fill: currentColor; }
+
+  .testimonial-text {
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .author-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-head);
+    font-weight: 700; font-size: 1rem;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+  .avatar-navy { background: var(--navy); }
+  .avatar-gold { background: var(--gold-dk); }
+  .avatar-mid  { background: var(--navy-mid); }
+
+  .author-name { font-weight: 700; color: var(--navy); font-size: 0.9rem; }
+  .author-role { font-size: 0.78rem; color: var(--text-lt); }
+
+  /* ── CTA BANNER ── */
+  .cta-section {
+    padding: 96px 5%;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .cta-banner {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
+    border-radius: 28px;
+    padding: 72px 80px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-banner::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-text { position: relative; z-index: 1; }
+  .cta-title {
+    font-family: var(--font-head);
+    font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+    font-weight: 700; color: var(--white);
+    line-height: 1.2; margin-bottom: 12px;
+  }
+  .cta-sub { font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 400px; line-height: 1.6; }
+
+  .cta-actions {
+    display: flex; flex-direction: column; gap: 12px;
+    align-items: flex-end;
+    flex-shrink: 0;
+    position: relative; z-index: 1;
+  }
+
+  .btn-gold {
+    background: var(--gold);
+    color: var(--navy-deep);
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-weight: 700; font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 4px 20px rgba(212,175,55,0.4);
+    transition: background 200ms, transform 150ms, box-shadow 200ms;
+    white-space: nowrap;
+  }
+  .btn-gold:hover {
+    background: var(--gold-lt);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(212,175,55,0.5);
+  }
+  .btn-ghost {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.88rem; font-weight: 500;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+    transition: color 200ms;
+  }
+  .btn-ghost:hover { color: var(--white); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy-deep);
+    color: rgba(255,255,255,0.6);
+    padding: 56px 5% 32px;
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-brand {}
+  .footer-logo {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 16px;
+  }
+  .footer-logo-icon {
+    width: 36px; height: 36px;
+    background: rgba(212,175,55,0.15);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .footer-logo-text {
+    font-family: var(--font-head);
+    font-size: 1.2rem; font-weight: 600;
+    color: var(--white);
+  }
+  .footer-logo-text span { color: var(--gold); }
+
+  .footer-tagline {
+    font-size: 0.87rem; line-height: 1.7;
+    max-width: 260px;
+    margin-bottom: 20px;
+  }
+
+  .footer-contact a {
+    display: flex; align-items: center; gap: 8px;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 0.85rem; margin-bottom: 8px;
+    transition: color 200ms;
+  }
+  .footer-contact a:hover { color: var(--gold-lt); }
+  .footer-contact svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  .footer-col h4 {
+    font-size: 0.78rem; font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 18px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none; font-size: 0.87rem;
+    transition: color 200ms;
+  }
+  .footer-col a:hover { color: var(--gold-lt); }
+
+  .footer-bottom {
+    padding-top: 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .footer-copy { font-size: 0.82rem; }
+  .footer-legal {
+    display: flex; gap: 24px;
+  }
+  .footer-legal a {
+    color: rgba(255,255,255,0.45);
+    text-decoration: none; font-size: 0.82rem;
+    transition: color 200ms;
+  }
+  .footer-legal a:hover { color: var(--white); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+  }
+
+  .hero-content > * { animation: fadeUp 0.6s ease both; }
+  .hero-badge  { animation-delay: 0.1s; }
+  .hero-title  { animation-delay: 0.2s; }
+  .hero-sub    { animation-delay: 0.3s; }
+  .hero-actions{ animation-delay: 0.4s; }
+  .hero-stats  { animation-delay: 0.5s; }
+
+  .hero-card-main { animation: fadeUp 0.7s 0.3s ease both; }
+  .float-badge-top { animation: floatY 4s 1s ease-in-out infinite; }
+  .float-badge-bottom { animation: floatY 4s 2s ease-in-out infinite; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 48px; padding: 120px 5% 60px; }
+    .steps-grid { grid-template-columns: 1fr 1fr; }
+    .steps-grid::after { display: none; }
+    .collateral-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .cta-banner { flex-direction: column; padding: 48px 36px; }
+    .cta-actions { align-items: flex-start; }
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 4%; }
+    .nav-links { display: none; }
+    .hero { padding: 110px 4% 56px; }
+    .hero-stats { gap: 20px; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .collateral-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .float-badge { display: none; }
+    .cta-banner { padding: 40px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+      </svg>
+    </div>
+    <span class="nav-logo-text">Chanda <span>Loans</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#collateral">Collateral</a></li>
+    <li><a href="#rates">Rates</a></li>
+    <li><a href="#apply" class="nav-cta">Apply Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section style="background: var(--bg);">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Zambia's Trusted Collateral Lender</div>
+      <h1 class="hero-title">
+        Unlock <em>Fast Cash</em><br>Against Your Valuables
+      </h1>
+      <p class="hero-sub">
+        Turn your electronics, appliances, or vehicles into instant working capital. No guarantors needed — just bring your item and walk out with cash the same day.
+      </p>
+      <div class="hero-actions">
+        <a href="#apply" class="btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
+          Apply for a Loan
+        </a>
+        <a href="#how" class="btn-secondary">
+          See how it works
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">K500<span>+</span></div>
+          <div class="stat-label">Loans disbursed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num"><span>~</span>1hr</div>
+          <div class="stat-label">Average approval</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">98<span>%</span></div>
+          <div class="stat-label">Customer satisfaction</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="float-badge float-badge-top">
+        <div class="float-icon gold">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="float-text">
+          <strong>Secure Storage</strong>
+          <span>Items kept safely</span>
+        </div>
+      </div>
+
+      <div class="hero-card-main">
+        <div class="card-header">
+          <span class="card-label">Loan Summary</span>
+          <span class="card-badge">✓ Approved</span>
+        </div>
+        <div class="loan-amount"><span class="loan-currency">K</span>5,000</div>
+        <div class="loan-sub">Against Samsung 65" Smart TV</div>
+        <div class="loan-details">
+          <div class="detail-item">
+            <div class="detail-label">Interest Rate</div>
+            <div class="detail-value">10% / mo</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Loan Period</div>
+            <div class="detail-value">30 Days</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Amount Due</div>
+            <div class="detail-value">K5,500</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Status</div>
+            <div class="detail-value" style="color:#059669">Active ✓</div>
+          </div>
+        </div>
+        <div class="loan-progress">
+          <div class="progress-header">
+            <span>Loan progress</span>
+            <span>20 days remaining</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+        <div>
+          <div class="detail-label" style="margin-bottom:10px">Accepted collateral types</div>
+          <div class="collateral-items">
+            <span class="collateral-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Electronics
+            </span>
+            <span class="collateral-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              Phones
+            </span>
+            <span class="collateral-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="2"/><circle cx="12" cy="16" r="1"/></svg>
+              Appliances
+            </span>
+            <span class="collateral-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+              Vehicles
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="float-badge float-badge-bottom">
+        <div class="float-icon green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="float-text">
+          <strong>Same-Day Cash</strong>
+          <span>Disbursed within 1 hour</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="section">
+  <div class="section-tag">Process</div>
+  <h2 class="section-title">Get Cash in 4 Simple Steps</h2>
+  <p class="section-sub">No paperwork mountains, no waiting weeks. Bring your item, walk out with cash — it's that simple.</p>
+
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-title">Bring Your Item</div>
+      <p class="step-desc">Visit our office with the item you'd like to use as collateral. We accept electronics, phones, appliances, and vehicles.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-title">Free Valuation</div>
+      <p class="step-desc">Our team assesses your item's market value on the spot. We offer up to 60% of the item's current value as a loan.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num gold-num">3</div>
+      <div class="step-title">Sign & Collect Cash</div>
+      <p class="step-desc">Agree to the loan terms, sign a simple agreement, and receive your cash immediately — no delays.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div class="step-title">Repay & Reclaim</div>
+      <p class="step-desc">Repay within the agreed period and collect your item. Need more time? Renewal options are available.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COLLATERAL TYPES -->
+<section id="collateral" class="collateral-section">
+  <div class="collateral-inner">
+    <div class="collateral-header">
+      <div class="section-tag">What We Accept</div>
+      <h2 class="section-title">Wide Range of Collateral</h2>
+      <p class="section-sub">We accept most valuable items in good working condition. Loans are calculated based on current market resale value.</p>
+    </div>
+
+    <div class="collateral-grid">
+      <div class="collateral-card">
+        <div class="collateral-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="collateral-name">TVs & Monitors</div>
+        <p class="collateral-desc">Smart TVs, LED screens, desktop monitors, projectors in working condition.</p>
+        <span class="collateral-range">K500 – K15,000</span>
+      </div>
+      <div class="collateral-card">
+        <div class="collateral-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M8 10h2l2 4 2-8 2 4h2"/></svg>
+        </div>
+        <div class="collateral-name">Laptops & Computers</div>
+        <p class="collateral-desc">Laptops, desktops, tablets — all brands accepted based on specs and condition.</p>
+        <span class="collateral-range">K800 – K20,000</span>
+      </div>
+      <div class="collateral-card">
+        <div class="collateral-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <div class="collateral-name">Smartphones</div>
+        <p class="collateral-desc">iPhones, Samsung Galaxy, and other flagship Android devices in good condition.</p>
+        <span class="collateral-range">K300 – K8,000</span>
+      </div>
+      <div class="collateral-card">
+        <div class="collateral-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="collateral-name">Home Appliances</div>
+        <p class="collateral-desc">Fridges, washing machines, microwaves, sound systems, and other household appliances.</p>
+        <span class="collateral-range">K400 – K10,000</span>
+      </div>
+      <div class="collateral-card">
+        <div class="collateral-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+        </div>
+        <div class="collateral-name">Motor Vehicles</div>
+        <p class="collateral-desc">Cars, motorbikes, and minibuses with valid documentation and roadworthy condition.</p>
+        <span class="collateral-range">K5,000 – K150,000</span>
+      </div>
+      <div class="collateral-card">
+        <div class="collateral-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="collateral-name">Other Valuables</div>
+        <p class="collateral-desc">Cameras, gaming consoles, power tools, musical instruments, and more. Ask us!</p>
+        <span class="collateral-range">Assessed on arrival</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHANDA / RATES -->
+<section id="rates" class="section">
+  <div class="why-grid">
+    <div>
+      <div class="section-tag">Why Choose Us</div>
+      <h2 class="section-title">Transparent, Fair &amp; Fast</h2>
+      <p class="section-sub">We built Chanda Loans to give Zambians a trustworthy place to access short-term cash without hidden fees or complicated processes.</p>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="13 2 13 9 20 9"/><path d="M20 14.5V7l-5-5H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h7"/><polyline points="16 19 18 21 22 17"/></svg>
+          </div>
+          <div class="why-text">
+            <div class="why-title">No Credit Checks Required</div>
+            <p class="why-desc">Your item is your security — we don't pull credit scores or require bank statements.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="why-text">
+            <div class="why-title">Same-Day Disbursement</div>
+            <p class="why-desc">Once your item is valued and terms agreed, cash is in your hands within the hour.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="why-text">
+            <div class="why-title">Items Stored Safely</div>
+            <p class="why-desc">Your collateral is stored in our secure, insured facility until you repay and collect it.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="why-text">
+            <div class="why-title">No Hidden Charges</div>
+            <p class="why-desc">What you see is what you pay. Interest and storage fees are disclosed upfront, always.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-visual">
+      <div class="why-card">
+        <div class="section-tag" style="margin-bottom:12px">Loan Rates</div>
+        <h3 style="font-family:var(--font-head);font-size:1.5rem;color:var(--navy);margin-bottom:4px">Competitive &amp; Clear</h3>
+        <p style="font-size:0.85rem;color:var(--text-lt);margin-bottom:20px">All rates quoted monthly, no surprises.</p>
+        <div class="rates-list">
+          <div class="rate-row">
+            <span class="rate-label">📱 Phones &amp; Gadgets</span>
+            <span class="rate-val">10% <span class="rate-badge">/ month</span></span>
+          </div>
+          <div class="rate-row">
+            <span class="rate-label">💻 Laptops &amp; Electronics</span>
+            <span class="rate-val">10% <span class="rate-badge">/ month</span></span>
+          </div>
+          <div class="rate-row">
+            <span class="rate-label">🏠 Home Appliances</span>
+            <span class="rate-val">10% <span class="rate-badge">/ month</span></span>
+          </div>
+          <div class="rate-row">
+            <span class="rate-label">🚗 Vehicles</span>
+            <span class="rate-val">8% <span class="rate-badge">/ month</span></span>
+          </div>
+          <div class="rate-row">
+            <span class="rate-label">Loan-to-Value Ratio</span>
+            <span class="rate-val" style="color:var(--gold-dk)">Up to 60%</span>
+          </div>
+          <div class="rate-row">
+            <span class="rate-label">Minimum Loan Period</span>
+            <span class="rate-val">7 Days</span>
+          </div>
+          <div class="rate-row">
+            <span class="rate-label">Maximum Loan Period</span>
+            <span class="rate-val">90 Days</span>
+          </div>
+        </div>
+        <div style="margin-top:24px;background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.2);border-radius:12px;padding:16px;">
+          <p style="font-size:0.82rem;color:var(--text-mid);line-height:1.6;">💡 <strong style="color:var(--navy)">Early Repayment Welcome.</strong> Pay off early with no penalties — you only pay interest for the days used.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-bg">
+  <div class="testimonials-inner">
+    <div class="section-tag">Testimonials</div>
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"My fridge broke down and I needed urgent cash for repairs. Chanda valued my laptop and gave me K3,500 within 45 minutes. The process was so easy and the staff were very professional."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar avatar-navy">M</div>
+          <div>
+            <div class="author-name">Mutale Banda</div>
+            <div class="author-role">Small Business Owner, Lusaka</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"I used my Samsung TV as collateral and got K7,000 to stock up my tuck shop before the festive season. Repaid after 3 weeks, got my TV back in perfect condition. Highly recommend!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar avatar-gold">C</div>
+          <div>
+            <div class="author-name">Chisomo Phiri</div>
+            <div class="author-role">Tuck Shop Operator, Kitwe</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"No bank would help me without a payslip. Chanda accepted my motorbike and I had K12,000 to sort my school fees emergency. Transparent, no hidden costs. This is exactly what Zambia needs."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar avatar-mid">T</div>
+          <div>
+            <div class="author-name">Temwani Mwale</div>
+            <div class="author-role">Freelance Contractor, Ndola</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section id="apply" class="cta-section">
+  <div class="cta-banner">
+    <div class="cta-text">
+      <h2 class="cta-title">Ready to Unlock Cash<br>From Your Valuables?</h2>
+      <p class="cta-sub">Visit our office today or call us to arrange a valuation. No appointment necessary — walk in, walk out with cash.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="tel:+260977000000" class="btn-gold">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.38 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Us Now
+      </a>
+      <a href="#how" class="btn-ghost">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Learn more about the process
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <span class="footer-logo-text">Chanda <span>Loans</span></span>
+        </div>
+        <p class="footer-tagline">Fast, fair, and transparent collateral-based lending for every Zambian who needs it.</p>
+        <div class="footer-contact">
+          <a href="tel:+260977000000">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.38 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +260 977 000 000
+          </a>
+          <a href="mailto:info@chandaleans.zm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@chandaleans.zm
+          </a>
+          <a href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Cairo Road, Lusaka, Zambia
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Electronics Loans</a></li>
+          <li><a href="#">Vehicle Loans</a></li>
+          <li><a href="#">Appliance Loans</a></li>
+          <li><a href="#">Loan Renewal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">Rates &amp; Fees</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Loan Agreement</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2024 Chanda Loans. Licensed by the Bank of Zambia.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
